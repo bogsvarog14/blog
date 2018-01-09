@@ -11,9 +11,6 @@ exports.getBlogEntry = function(id) {
 
 
 
-var nekiVar1 = JSON.parse(entries);
-save.getBlogEntries(entries);
-
 
 
 

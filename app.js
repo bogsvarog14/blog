@@ -35,14 +35,14 @@ app.post(`/addUser`, function (req, res) {
 		data.push(req.body);
 		console.log(req.body);
 		var jsonData = JSON.stringify(data);
-		fs.writeFile(__dirname + "/" + "package.json", jsonData);
+		fs.writeFile(__dirname + "/" + "entries.json", jsonData);
 		res.end(jsonData);
 	});
 })
 
 app.delete(`/deleteUser/:id`, function (req, res) {
 
-	fs.readFile(__dirname + "/" + "package.json", `utf8`, function (err, data) {
+	fs.readFile(__dirname + "/" + "entries.json", `utf8`, function (err, data) {
 
 		var users = JSON.parse(data);
 		console.log(users);
@@ -55,7 +55,7 @@ app.delete(`/deleteUser/:id`, function (req, res) {
 
 		}
 		var jsonData = JSON.stringify(users);
-		fs.writeFile(__dirname + "/" + "package.json", jsonData);
+		fs.writeFile(__dirname + "/" + "entries.json", jsonData);
 		res.end(jsonData);
 	});
 })
